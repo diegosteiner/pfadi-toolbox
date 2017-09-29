@@ -1,0 +1,34 @@
+---
+---
+
+@import 'functions';
+@import 'variables';
+
+$theme-colors: (
+  primary: #0098ba,
+  secondary: $gray-600,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
+  light: $gray-100,
+  dark: $gray-800
+);
+
+@import 'bootstrap';
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding-top: 60px;
+}
+
+p {
+  line-height: 1.75; }
+
+.navbar-dark {
+
+    a {
+    color: white;
+    }
+}

@@ -1,0 +1,16 @@
+---
+layout: none
+---
+[
+    {% for tool in site.tools %}
+        {
+            "title": "{{ tool.title }}",
+            "url": "{{ tool.url | prepend: site.github.url }}",
+            "tags": "{{ tool.tags }}",
+            "description": "{{ tool.description }} "
+        }
+        {% if forloop.last %}
+        {% else %},
+        {% endif %}
+    {% endfor %}
+]

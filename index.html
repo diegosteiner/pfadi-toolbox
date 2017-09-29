@@ -1,0 +1,73 @@
+---
+layout: default
+title: Pfadi Toolbox
+---
+
+<div class="container">
+  {% for post in site.tools %}
+    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} .</small></p>
+  {% endfor %}
+</div>
+
+<div id="app">
+  <input type="text" v-model='q' placeholder="Search" />
+  <ul v-for='tool of tools'>
+    <li>{{ tool.title }}</li>
+  </ul>
+  <div v-for='category, name of categories(tools, q)'>
+    <div>
+      <h1>{{ name }}</h1>
+      <ul id="tools" v-for='r of category'>
+        <li>{{ r.title }} {{ r }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      q: '',
+      tools: []
+    },
+    created: function() {
+      $.getJSON('tools.json', function (data) {
+      vm.$set('tools', data);
+    });
+    },
+    methods: {
+      filter: function (tools, q) {
+        if (q.length <= 0) {
+          return tools;
+        }
+        let options = {
+          shouldSort: true,
+          threshold: 0.6,
+          location: 0,
+          distance: 100,
+          maxPatternLength: 32,
+          minMatchCharLength: 1,
+          keys: [
+            "title",
+            "category",
+            'tags'
+          ]
+        };
+        var fuse = new Fuse(tools, options);
+        return fuse.search(q);
+      },
+      categories: function (tools, q) {
+        let cats = {};
+        for (result of this.filter(tools, q)) {
+          let category = cats[result.category];
+          cats[result.category] = (typeof (category) == Array ? category.push(result) : [result]);
+        }
+        return cats;
+      }
+    }
+  });
+
+</script>
