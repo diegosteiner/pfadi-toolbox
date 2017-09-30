@@ -10,44 +10,70 @@
 
     <title>{{ site.title }}</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
-        crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:700|Roboto" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
 
     <link href="{{ site.github.url }}/assets/css/styles.css" rel="stylesheet" />
+
+    <script>
+        $.getJSON('/tools.json', function (data) {
+            var options = {
+                shouldSort: true,
+                tokenize: true,
+                threshold: 0.6,
+                location: 0,
+                distance: 100,
+                maxPatternLength: 32,
+                minMatchCharLength: 3,
+                id: "id",
+                keys: [
+                    "title",
+                    "link",
+                    "category",
+                    "tags"
+                ]
+            };
+            var fuse = new Fuse(data, options);
+            $('#search').keyup(function () {
+                var q = $(this).val();
+                var targets = $("ul.posts>li");
+                if (q.length <= 2) {
+                    targets.show();
+                    return;
+                }
+                var result = fuse.search(q);
+                targets.hide();
+                $.each(result, function (_index, id) {
+                    $('#' + id).show();
+                });
+            });
+        });
+
+    </script>
 
 </head>
 
 <body id="top">
-    <nav class="navbar navbar-expand-lg navbar-inverse bg-primary fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
         <div class="container">
-            <div class="col-md-3">
-                <a class="navbar-brand js-scroll-trigger" href="#top">{{ site.title }}</a>
-            </div>
-            <div class="col-md-6">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input class="form-control" id="name" type="text" placeholder="Suche" />
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-            </div>
+                <div class="col">
+                    <a class="navbar-brand js-scroll-trigger" href="/#top">{{ site.title }}</a>
+                </div>
+                <div class="col">
+                    <form class="" role="search">
+                            <input class="form-control" id="search" type="text" placeholder="Suche" />
+                    </form>
+                </div>
         </div>
     </nav>
 
     {{ content }}
 
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <section id="bg-gray">
+
 </body>
 
 </html>

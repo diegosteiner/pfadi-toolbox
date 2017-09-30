@@ -21,11 +21,10 @@ description: >
 
 # Build settings
 markdown: kramdown
-plugins:
-collections:
-  tools:
-    output: true
-    permalink: /:collection/:path
+
+# plugins:
+
+permalink: none
 
 sass:
   # loading path from site root
@@ -42,7 +41,7 @@ sass:
 defaults:
   -
     scope:
-      path: '_tools'
+      path: '_posts'
     values:
       layout: 'tool'
 
@@ -50,11 +49,13 @@ defaults:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - yarn.lock
