@@ -6,7 +6,8 @@ title: Pfadi Toolbox
   <div class="container">
     <div class="row">
       <div class="col">
-        {% for cat in site.categories %}
+        {% assign sorted_categories = site.categories | sort %}
+        {% for cat in sorted_categories %}
         <h2>{{ cat.first | capitalize }}</h2>
         <ul class="posts">
           {% for post in cat.last %}
@@ -19,7 +20,7 @@ title: Pfadi Toolbox
 
             <div class="row">
               <div class="col-md">
-                <span class="fa fa-link"></span> <a href="{{ post.link }}">{{ post.link }}</a>
+                <span class="fa fa-link"></span> <a href="{{ post.link }}">{{ post.link | truncate: 40, '...' }}</a>
               </div>
               <div class="col-md">
                 <span class="fa fa-home"></span> {{ post.author }}
