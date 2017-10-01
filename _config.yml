@@ -26,6 +26,8 @@ markdown: kramdown
 
 permalink: none
 
+form_action: 'https://formspree.io/filou.linux@gmail.com'
+
 sass:
   # loading path from site root
   # default to _sass
