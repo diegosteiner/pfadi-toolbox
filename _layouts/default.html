@@ -19,36 +19,55 @@
     <link href="{{ '/assets/css/styles.css' | relative_url }}" rel="stylesheet" />
 
     <script>
+        var filterResults = function(results) {
+            var targets = $("ul.posts>li");
+            $('.category').show();
+
+            if (results.length <= 0) {
+                targets.show();
+                return;
+            }
+
+            targets.hide();
+
+            for(result of results) {
+                $('#' + result.item).show();
+            }
+
+            $(".category:not(:has(>ul.posts>li:visible))").hide();
+        };
+
         $.getJSON('{{ "/tools.json" | relative_url }}', function (data) {
             var options = {
                 shouldSort: true,
+                includeScore: true,
+                includeMatches: true,
                 tokenize: true,
-                threshold: 0.6,
-                location: 0,
-                distance: 100,
+                threshold: 0.2,
                 maxPatternLength: 32,
                 minMatchCharLength: 3,
                 id: "id",
                 keys: [
-                    "title",
-                    "link",
-                    "category",
-                    "tags"
+                    {
+                        name: 'title',
+                        weight: 0.4
+                    }, {
+                        name: 'category',
+                        weight: 0.1
+                    }, {
+                        name: 'link',
+                        weight: 0.4
+                    }, {
+                        name: 'tags',
+                        weight: 0.1
+                    }
                 ]
             };
             var fuse = new Fuse(data, options);
             $('#search').keyup(function () {
                 var q = $(this).val();
-                var targets = $("ul.posts>li");
-                if (q.length <= 2) {
-                    targets.show();
-                    return;
-                }
-                var result = fuse.search(q);
-                targets.hide();
-                $.each(result, function (_index, id) {
-                    $('#' + id).show();
-                });
+                var results = fuse.search(q);
+                filterResults(results);
             });
         });
 
