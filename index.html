@@ -13,7 +13,7 @@ title: Pfadi Toolbox
           <ul class="posts">
             {% for post in cat.last %}
             <li id='{{ post.id | slugify }}'>
-              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+              <h3><a href="{{ post.link }}">{{ post.title }}</a></h3>
 
               <p>
                 {{ post.excerpt | strip_html }}
