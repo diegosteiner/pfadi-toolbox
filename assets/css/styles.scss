@@ -106,7 +106,7 @@ ul.posts {
 }
 
 section#contact {
-  background: $gray-200;
+  background: $gray-300;
 }
 
 body {
@@ -118,10 +118,18 @@ body {
   }
 
   > footer {
-    background: $gray-600;
+    background: $gray-700;
     color: white;
-    min-height: 10rem;
-    padding: 2rem 0;
+    padding: 4rem 0;
+    text-align: center;
+
+    .list-inline-item {
+      margin: 0 1.5rem
+    }
+
+    a, a:hover {
+      color: white;
+    }
   }
 }
 
