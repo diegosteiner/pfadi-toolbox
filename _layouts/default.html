@@ -19,24 +19,19 @@
     <link href="{{ '/assets/css/styles.css' | relative_url }}" rel="stylesheet" />
 
     <script>
-        var filterResults = function(results) {
+        var filterResults = function (results) {
             var targets = $("ul.posts>li");
             $('.category').show();
-
             if (results.length <= 0) {
                 targets.show();
                 return;
             }
-
             targets.hide();
-
-            for(result of results) {
+            for (result of results) {
                 $('#' + result.item).show();
             }
-
             $(".category:not(:has(>ul.posts>li:visible))").hide();
         };
-
         $.getJSON('{{ "/tools.json" | relative_url }}', function (data) {
             var options = {
                 shouldSort: true,
@@ -47,21 +42,19 @@
                 maxPatternLength: 32,
                 minMatchCharLength: 3,
                 id: "id",
-                keys: [
-                    {
-                        name: 'title',
-                        weight: 0.4
-                    }, {
-                        name: 'category',
-                        weight: 0.1
-                    }, {
-                        name: 'link',
-                        weight: 0.4
-                    }, {
-                        name: 'tags',
-                        weight: 0.1
-                    }
-                ]
+                keys: [{
+                    name: 'title',
+                    weight: 0.4
+                }, {
+                    name: 'category',
+                    weight: 0.1
+                }, {
+                    name: 'link',
+                    weight: 0.4
+                }, {
+                    name: 'tags',
+                    weight: 0.1
+                }]
             };
             var fuse = new Fuse(data, options);
             $('#search').keyup(function () {
@@ -78,35 +71,37 @@
 <body id="top">
     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
         <div class="container">
-                <div class="col">
-                    <a class="navbar-brand" href="{{ '/#top' | relative_url }}">{{ site.title }}</a>
-                </div>
-                <div class="col">
-                    <form class="" role="search">
-                            <input class="form-control" id="search" type="text" placeholder="Suche" autofocus />
-                    </form>
-                </div>
+            <div class="col">
+                <a class="navbar-brand" href="{{ '/#top' | relative_url }}">{{ site.title }}</a>
+            </div>
+            <div class="col">
+                <form class="" role="search">
+                    <input class="form-control" id="search" type="text" placeholder="Suche" autofocus />
+                </form>
+            </div>
         </div>
     </nav>
 
     {{ content }}
 
-<footer>
-<div class="container">
-  <div class="row">
-    <div class="col">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-2017 by Diego Steiner / Filou
-            </li>
-<li class="list-inline-item">
-        <a href="https://github.com/diegosteiner/pfadi-toolbox"><span class="fa fa-github-alt"></span> View on GitHub</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-    </div>
-        </footer>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            2017 by Diego Steiner / Filou
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/diegosteiner/pfadi-toolbox"><span class="fa fa-github-alt"></span> View on GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% include analytics.html %}
 
 </body>
 
