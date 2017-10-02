@@ -5,7 +5,7 @@ title: Pfadi Toolbox
 <section id="tools">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-md-8">
+      <div class="col-md-12">
         {% assign sorted_categories = site.categories | sort %}
         {% for cat in sorted_categories %}
         <div class="category">
@@ -13,7 +13,7 @@ title: Pfadi Toolbox
           <ul class="posts">
             {% for post in cat.last %}
             <li id='{{ post.id | slugify }}'>
-              <h3><a href="{{ post.link }}">{{ post.title }}</a></h3>
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
 
               <p>
                 {{ post.excerpt | strip_html }}
@@ -39,14 +39,9 @@ title: Pfadi Toolbox
 
 <section id="contact">
   <div class="container">
-    <div class="row">
-      <div class="col text-center">
+    <div class="row justify-content-md-center">
+      <div class="col-md-12">
         <h2>Tool vorschlagen</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
         <form action="{{ site.form_action }}" method="POST">
           <div class="row">
             <div class="col-md-6">
