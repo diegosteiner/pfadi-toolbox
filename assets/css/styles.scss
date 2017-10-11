@@ -82,9 +82,12 @@ h1 {
 }
 
 h2 {
-  margin: 4rem 0 2rem 0;
+  margin: 4rem 10rem 2rem 10rem;
   font-size: 3rem;
   text-align: center;
+  // background-color: theme-color('primary');
+  // color: white;
+  // padding: .5rem;
 }
 
 ul.posts {
