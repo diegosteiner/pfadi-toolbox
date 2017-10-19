@@ -17,54 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
 
     <link href="{{ '/assets/css/styles.css' | relative_url }}" rel="stylesheet" />
-
-    <script>
-        var filterResults = function (results) {
-            var targets = $("ul.posts>li");
-            $('.category').show();
-            if (results.length <= 0) {
-                targets.show();
-                return;
-            }
-            targets.hide();
-            for (result of results) {
-                $('#' + result.item).show();
-            }
-            $(".category:not(:has(>ul.posts>li:visible))").hide();
-        };
-        $.getJSON('{{ "/tools.json" | relative_url }}', function (data) {
-            var options = {
-                shouldSort: true,
-                includeScore: true,
-                includeMatches: true,
-                tokenize: true,
-                threshold: 0.2,
-                maxPatternLength: 32,
-                minMatchCharLength: 3,
-                id: "id",
-                keys: [{
-                    name: 'title',
-                    weight: 0.4
-                }, {
-                    name: 'category',
-                    weight: 0.1
-                }, {
-                    name: 'link',
-                    weight: 0.4
-                }, {
-                    name: 'tags',
-                    weight: 0.1
-                }]
-            };
-            var fuse = new Fuse(data, options);
-            $('#search').keyup(function () {
-                var q = $(this).val();
-                var results = fuse.search(q);
-                filterResults(results);
-            });
-        });
-
-    </script>
+    <script src="{{ '/assets/javascripts/filter.js' | relative_url }}" type="text/javascript"></script>
 
 </head>
 
@@ -75,8 +28,8 @@
                 <a class="navbar-brand" href="{{ '/#top' | relative_url }}">{{ site.title }}</a>
             </div>
             <div class="col">
-                <form class="" role="search">
-                    <input class="form-control" id="search" type="text" placeholder="Suche" autofocus />
+                <form action="{{ '/#top' | relative_url }}" method="GET" role="search">
+                    <input class="form-control" id="search" type="text" name='q' placeholder="Suche" autofocus />
                 </form>
             </div>
         </div>
@@ -96,6 +49,15 @@
                             <a href="https://github.com/diegosteiner/pfadi-toolbox"><span class="fa fa-github-alt"></span> View on GitHub</a>
                         </li>
                     </ul>
+                    <p class='text-muted'>Die Inhalte von pfadi-toolbox wurden mit Sorgfalt und nach bestem Gewissen erstellt. Dennoch übernimmt
+                        der Anbieter dieser Webseite keine Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der
+                        bereitgestellten Seiten und Inhalte.</p>
+                    <p class='text-muted'>Die Webseite enthält sog. „externe Links“ (Verlinkungen) zu anderen Webseiten, auf deren Inhalt der Anbieter
+                        der Webseite keinen Einfluss hat. Aus diesem Grund kann der Anbieter für diese Inhalte auch keine
+                        Gewähr übernehmen. Für die Inhalte und Richtigkeit der bereitgestellten Informationen ist der jeweilige
+                        Anbieter der verlinkten Webseite verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße
+                        erkennbar. Bei Bekanntwerden einer solchen Rechtsverletzung wird der Link umgehend entfernen.
+                    </p>
                 </div>
             </div>
         </div>
