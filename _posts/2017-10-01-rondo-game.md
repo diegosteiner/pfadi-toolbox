@@ -7,4 +7,5 @@ screenshot: '/assets/images/rondo-game.png'
 author: Simon Huber / Pumukl
 ---
 
+Das Rondo-Game ist ein Auflockerungsspiel für Sing-Song-Begeisterte Pfadis am Lagerfeuer.
 
