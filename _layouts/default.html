@@ -25,7 +25,9 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
         <div class="container">
             <div class="col">
-                <a class="navbar-brand" href="{{ '/#top' | relative_url }}">{{ site.title }}</a>
+                <a class="navbar-brand" href="{{ '/#top' | relative_url }}">
+                    <img src="{{ '/assets/logo.svg' | relative_url }}" />
+                    {{ site.title }}</a>
             </div>
             <div class="col">
                 <form action="{{ '/#top' | relative_url }}" method="GET" role="search">
