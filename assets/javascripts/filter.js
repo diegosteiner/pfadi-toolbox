@@ -2,15 +2,19 @@
 ---
 
 var filterResults = function (results) {
+    var news = $("#news");
     var targets = $("ul.posts>li");
     $('.category').show();
     if (results.length <= 0) {
         targets.show();
+        news.show();
         return;
-    }
-    targets.hide();
-    for (result of results) {
-        $('#' + result.item).show();
+    } else {
+        targets.hide();
+        news.hide();
+        for (result of results) {
+            $('#' + result.item).show();
+        }
     }
     $(".category:not(:has(>ul.posts>li:visible))").hide();
     window.scrollTo(0, 0);

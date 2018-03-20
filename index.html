@@ -2,10 +2,30 @@
 layout: default
 title: Pfadi Toolbox
 ---
+<section id="news">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+        <h2>Neuste Tools</h2>
+        <ul class="list-unstyled">
+          {% for post in site.posts offset:0 limit:3 %}
+            <li id='{{ post.id | slugify }}' class="mb-5">
+              <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a> -
+                <small>{{ post.date | date: '%d.%m.%Y' }}</small></h3>
+              <p>
+                {{ post.excerpt | strip_html }}
+              </p>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="tools">
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-md-12">
+      <div class="col-md-8">
         {% assign sorted_categories = site.categories | sort %}
         {% for cat in sorted_categories %}
         <div class="category">
@@ -53,6 +73,9 @@ title: Pfadi Toolbox
               </div>
               <div class="form-group">
                 <input class="form-control" name="tool_link" type="text" placeholder="Link zum Tool *" required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" name="tool_author" type="text" placeholder="Author">
               </div>
             </div>
             <div class="col-md-6">
