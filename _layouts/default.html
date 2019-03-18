@@ -23,23 +23,20 @@
 
 <body id="top">
     <header class="fixed-top">
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="container">
-            <div class="col">
-                <a class="navbar-brand" href="{{ '/' | relative_url }}">
-                    <img src="{{ '/assets/logo.svg' | relative_url }}" />
-                    {{ site.title }}</a>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <div class="col">
+                    <a class="navbar-brand" href="{{ '/' | relative_url }}">
+                        <img src="{{ '/assets/logo.svg' | relative_url }}" />
+                        {{ site.title }}</a>
+                </div>
+                <div class="col">
+                    <form action="{{ '/' | relative_url }}" method="GET" role="search">
+                        <input class="form-control" id="search" type="text" name='q' placeholder="Suche" autofocus />
+                    </form>
+                </div>
             </div>
-            <div class="col">
-                <form action="{{ '/' | relative_url }}" method="GET" role="search">
-                    <input class="form-control" id="search" type="text" name='q' placeholder="Suche" autofocus />
-                </form>
-            </div>
-        </div>
-    </nav>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon class="svg--sm" fill="white" points="0,0 0,100 100,100"/>
-          </svg>
+        </nav>
     </header>
 
     {{ content }}
@@ -50,7 +47,7 @@
                 <div class="col">
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            2017 by Diego Steiner / Filou
+                            2019 by Diego Steiner / Filou
                         </li>
                         <li class="list-inline-item">
                             <a href="https://github.com/diegosteiner/pfadi-toolbox"><span class="fa fa-github-alt"></span> View on GitHub</a>
