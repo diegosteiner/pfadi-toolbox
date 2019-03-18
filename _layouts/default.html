@@ -22,7 +22,8 @@
 </head>
 
 <body id="top">
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+    <header class="fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark">
         <div class="container">
             <div class="col">
                 <a class="navbar-brand" href="{{ '/' | relative_url }}">
@@ -36,6 +37,10 @@
             </div>
         </div>
     </nav>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon class="svg--sm" fill="white" points="0,0 0,100 100,100"/>
+          </svg>
+    </header>
 
     {{ content }}
 

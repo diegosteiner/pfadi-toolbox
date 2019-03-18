@@ -139,6 +139,15 @@ body {
       font-size: .75rem;
     }
   }
+
+  > header {
+    background-image: linear-gradient(#ff9d2f, #ff6126);
+
+    svg {
+      height: 40px;
+      width: 100%;
+    }
+  }
 }
 
 p {
@@ -148,4 +157,6 @@ p {
 .navbar-brand img {
   height:40px; margin: -10px 0;
 }
+
+
 
