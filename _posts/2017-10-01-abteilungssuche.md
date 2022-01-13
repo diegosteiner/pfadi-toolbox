@@ -2,7 +2,7 @@
 title: Abteilungsfinder
 category: weiteres
 tags: [abteilungsfinder, einheit, gruppe, abteilung, ort]
-link: http://www.scout.ch/de/pfadi-online/links/pfadieinheiten/pfadieinheiten-in-der-schweiz
+link: https://pfadi.swiss/de/go/mitmachen/#Pfadi-Finder
 author: PBS
 ---
 

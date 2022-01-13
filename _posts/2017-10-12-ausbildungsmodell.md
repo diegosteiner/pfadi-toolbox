@@ -2,6 +2,6 @@
 title: Ausbildungsmodell der PBS
 category: ausbildung
 tags: [kurse]
-link: http://www.scout.ch/de/verband/downloads/ausbildung/allgemein/ausbildungsmodell-reglementarischer-teil/view
+link: https://pfadi.swiss/de/publikationen-downloads/downloads/?search=ausbildungsmodell
 author: PBS
 ---

@@ -2,7 +2,7 @@
 title: Hosensackspiele
 category: ideen
 tags: [spiele, kimspiele, hosensack, taschenspiele, zwischendurch]
-link: http://hosensackspiele.pfadikantonzug.ch/
+link: https://www.pfadikantonzug.ch/hosensackspiele
 screenshot: '/assets/images/hosensackspiele.png'
 author: Pfadi Kanton Zug
 ---
