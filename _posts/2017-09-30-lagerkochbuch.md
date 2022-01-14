@@ -2,7 +2,7 @@
 title: Lagerkochbuch
 category: lager
 tags: [kochbuch, menüplaner, küche]
-link: http://www.lagerkochbuch.ch/
+link: https://lagerkochbuch.ch/
 screenshot: '/assets/images/lagerkochbuch.png'
 author: Lagerkochbuch Team
 ---

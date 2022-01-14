@@ -2,6 +2,6 @@
 title: Lager Terminliste
 category: lager
 tags: [j+s, terminliste, zeitplanung, lageradministration]
-link: http://www.scout.ch/de/verband/downloads/programm/lager/terminliste-lagerplanung/view
+link: https://pfadi.swiss/de/publikationen-downloads/downloads/?search=terminliste+lager
 author: PBS
 ---

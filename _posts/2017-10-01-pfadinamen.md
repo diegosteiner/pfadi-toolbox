@@ -2,7 +2,7 @@
 title: Pfadinamen-Verzeichnis
 category: ideen
 tags: [pfadiname, pfadi-namen, vulgo]
-link: http://www.pfadinamen.ch/
+link: https://www.pfadinamen.ch/
 author: Michael Albertin v/o Purzel
 ---
 

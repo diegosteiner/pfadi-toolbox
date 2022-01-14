@@ -2,7 +2,7 @@
 title: Cudeschin
 category: ausbildung
 tags: [cudeshin, kudeschin, gudeschin, cudeshon]
-link: http://www.cudesch.pbs.ch/
+link: https://cudeschin.pbs.ch/
 author: PBS
 submitter: Appendix <tobias.juon@pbs.ch>
 ---

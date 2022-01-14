@@ -2,7 +2,7 @@
 title: Faires Lager
 category: lager
 tags: [fair, nachhaltig, toolkit]
-link: http://www.faires-lager.ch/
+link: https://www.faires-lager.ch/
 author: Trägerschaft faires Lager
 ---
 

@@ -2,7 +2,7 @@
 title: Lageraktivitäten für Kinder - Ideen für das ganze Jahr
 category: lager
 tags: [la, kindersport, ideen]
-link: https://www.scout.ch/de/pfadialltag/lager/hilfsmittel/la-im-kindersport
+link: https://pfadi.swiss/de/pfadiaktivitaten/lagererlebnisse/#lakispo
 author: PBS
 screenshot: '/assets/images/lafuerkinder.png'
 submitter: tobias.juon@pbs.ch

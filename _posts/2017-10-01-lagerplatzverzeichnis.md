@@ -2,7 +2,7 @@
 title: Lagerplatz-Verzeichnis
 category: lager
 tags: [lagerplatz, lagerplatz-verzeichnis]
-link: http://www.scout.ch/de/3/pfadistiftung/lagerplatzsuche
+link: https://pfadistiftung.ch/lagerplatz-verzeichnis/
 author: Pfadi Stiftung
 ---
 
