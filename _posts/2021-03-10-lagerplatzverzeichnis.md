@@ -1,7 +1,7 @@
 ---
-title: Lagerplatz-Verzeichnis
+title: Neues Lagerplatz-Verzeichnis
 category: lager
-tags: [lagerplatz, lagerplatz-verzeichnis]
+tags: [lagerplatz, lagerplatz-verzeichnis, lagerplätze, camp]
 link: https://pfadistiftung.ch/lagerplatz-verzeichnis/
 author: Pfadi Stiftung
 ---
